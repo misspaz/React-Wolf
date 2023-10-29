@@ -1,14 +1,11 @@
-import { useState } from "react";
+import "../Counter/_counter.scss";
 
-export default function Counter() {
-  const [counter, setCounter] = useState(1);
-
+export default function Counter({counter, sumauno, restauno}) {
   return (
-    <div>
-         <button onClick={() => setCounter(counter + 1)}>+</button>
-          {counter}
-          <button onClick={() => setCounter(counter - 1)}>-</button>
+    <div className="counter-style">
+      <button onClick={sumauno}>+</button>
+      {counter}
+      <button onClick={restauno}>-</button>
     </div>
-
-  )
+  );
 }

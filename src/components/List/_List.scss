@@ -1,0 +1,29 @@
+.main-page{
+    width: 800px;
+    height: 500px;
+    background-color: blue;
+
+    input{
+        background-color: black;
+    }
+   
+}
+
+.li-counter{
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+    li{
+        width: 200px;
+        font-family: 'Sometype Mono', monospace;
+        font-size: 50px;
+        color: white;
+    }
+
+
+}
