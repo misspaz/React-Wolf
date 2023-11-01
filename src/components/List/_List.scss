@@ -1,29 +1,109 @@
-.main-page{
-    width: 800px;
-    height: 500px;
-    background-color: blue;
-
-    input{
-        background-color: black;
-    }
-   
+@font-face {
+  font-family: "Baswaran";
+  src: url(../../assets//fonts/Baswaran.otf);
 }
 
-.li-counter{
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
+.li-counter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  border-top: white solid 1px;
 
-    li{
-        width: 200px;
-        font-family: 'Sometype Mono', monospace;
-        font-size: 50px;
-        color: white;
-    }
+  li {
+    width: 400px;
+    font-family: "Baswaran";
+    font-size: 30px;
+    color: white;
+  }
+}
 
+.delete-button {
+  background-color: #5c3570;
+  color: white;
+  border-radius: 21px;
+  margin: 10px;
+  height: 25px;
+  width: 45px;
+}
 
+.add-character {
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+
+  input {
+    background-color: transparent;
+    border-bottom: #e1ae5c solid 1px;
+    width: 100%;
+    font-family: "Baswaran";
+    color: white;
+  }
+
+  button {
+    background-color: #e1ae5c;
+    color: #241d32;
+    border-radius: 21px;
+    margin-top: 10px;
+    height: 25px;
+    width: 80px;
+    font-family: "Baswaran";
+  }
+
+  button:hover {
+    background-color: #241d32;
+    color: #e1ae5c;
+    border-radius: 21px;
+    margin-top: 10px;
+    height: 25px;
+    width: 80px;
+    font-family: "Baswaran";
+    border: 1px solid white;
+  }
+}
+
+.dealing-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 21px;
+  margin-top: 36px;
+  height: 35px;
+  width: 100%;
+  font-family: "Baswaran";
+}
+
+.dealing-button:hover {
+  background-color: #e1ae5c;
+  border: 1px solid white;
+  color: #241d32;
+  border-radius: 21px;
+  margin-top: 36px;
+  height: 35px;
+  width: 100%;
+  font-family: "Baswaran";
+}
+
+.results-characters {
+  font-family: "Baswaran";
+  color: #e1ae5c;
+  font-size: 50px;
+  line-height: 1.2em;
+  margin-top: 50px;
+}
+
+.next-character-button {
+  background-color: #e1ae5c;
+  color: #241d32;
+  border-radius: 21px;
+  margin-top: 10px;
+  height: 25px;
+  width: 80px;
+  font-family: "Baswaran";
 }

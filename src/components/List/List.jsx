@@ -13,7 +13,6 @@ export default function List({ data }) {
 
   const addNewElement = (newElement) => {
     setElementsList((firstElements) => [...firstElements, newElement]);
-    
   };
 
   const handleAddElement = () => {
@@ -65,23 +64,17 @@ export default function List({ data }) {
       setCurrentIndex(currentIndex + 1);
     }
   };
-// console.log(shuffledArray);
+  // console.log(shuffledArray);
 
-const deleteElement = (item) => {
-  const updatedList = elementsList.filter((element) => element !== item);
-  setElementsList(updatedList);
-};
+  const deleteElement = (item) => {
+    const updatedList = elementsList.filter((element) => element !== item);
+    setElementsList(updatedList);
+  };
 
   return (
     <>
       {show && (
         <div className="main-page">
-          <input
-            onChange={(e) => setText(e.target.value)}
-            value={text}
-            type="text"
-          />
-          <button onClick={handleAddElement}>Añadir</button>
           <ul>
             {elementsList.map((item, index) => (
               <div className="li-counter" key={index}>
@@ -91,21 +84,37 @@ const deleteElement = (item) => {
                   sumauno={() => sumauno(index)}
                   restauno={() => restauno(index)}
                 />
-                <button onClick={() => deleteElement(item)}>X</button>
+
+                <button
+                  className="delete-button"
+                  onClick={() => deleteElement(item)}
+                >
+                  X
+                </button>
               </div>
             ))}
           </ul>
-
-          <button onClick={shuffle}>Start Dealing</button>
+          <div className="add-character">
+            <input
+              onChange={(e) => setText(e.target.value)}
+              value={text}
+              type="text"
+              placeholder="Add character..."
+            />
+            <button onClick={handleAddElement}>Añadir</button>
+          </div>
+          <button className="dealing-button" onClick={shuffle}>
+            Start Dealing
+          </button>
         </div>
       )}
 
       {hide && (
         <div>
           {currentIndex < shuffledArray.length && (
-            <p>{shuffledArray[currentIndex]}</p>
+            <p className="results-characters">{shuffledArray[currentIndex]}</p>
           )}
-          <button onClick={handleClick}>Mostrar siguiente elemento</button>
+          <button className="next-character-button" onClick={handleClick}>Show next character</button>
         </div>
       )}
     </>

@@ -1,9 +1,21 @@
-.counter-style{
-    color: white;
-    font-family: 'Sometype Mono', monospace;
-    font-size: 20px;
+@font-face {
+    font-family: 'Baswaran';
+    src: url(../../assets//fonts//Baswaran.otf);
+   
+  }
 
-    button{
 
-    }
+.counter-style {
+  color: white;
+  font-family: 'Baswaran';
+  font-size: 20px;
+
+  button {
+    height: 25px;
+    width: 45px;
+    background-color: white;
+    color: #1D202F;
+    border-radius: 21px;
+    margin: 10px;
+  }
 }
