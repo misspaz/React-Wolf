@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Counter from "../Counter/Counter";
 import "../List/_List.scss";
 
-export default function List({ data }) {
+export default function ListTest({ data }) {
   const [counters, setCounters] = useState(data.map(() => 1));
   const [shuffledArray, setShuffledArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,15 +10,16 @@ export default function List({ data }) {
   const [show, setShow] = useState(true);
   const [hide, setHide] = useState(false);
   const [text, setText] = useState("");
-  const [showCharacter, setShowCharacter] = useState(false);
+  const [reset, setReset] = useState(false);
 
   const addNewElement = (newElement) => {
     setElementsList((firstElements) => [...firstElements, newElement]);
-    setCounters((prevCounters) => [...prevCounters, 1]);
   };
 
   const handleAddElement = () => {
     addNewElement(text);
+    console.log(text);
+    // setText("");
   };
 
   const sumauno = (index) => {
@@ -41,13 +42,17 @@ export default function List({ data }) {
   }, [elementsList, counters]);
 
   const shuffle = () => {
+    if (elementsList.length === 0) {
+      // Si no quedan elementos, reiniciar todo
+      setReset(true);
+      return;
+    }
+
     let shuffled = [];
     elementsList.forEach((item, index) => {
       for (let i = 0; i < counters[index]; i++) {
         shuffled.push(item);
       }
-      setShow(false);
-      setHide(true);
     });
 
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -56,29 +61,30 @@ export default function List({ data }) {
     }
 
     setShuffledArray(shuffled);
+    setCurrentIndex(0);
+    setReset(false); // Reinicio desactivado
   };
 
   const handleClick = () => {
-    if (showCharacter) {
+    if (reset) {
+      // Si es necesario reiniciar, resetear todo
+      setShuffledArray([]);
+      setCurrentIndex(-1);
+      setCounters(data.map(() => 1));
+      setElementsList(data);
+      setReset(false);
+    } else {
       if (currentIndex < shuffledArray.length - 1) {
         setCurrentIndex(currentIndex + 1);
       } else {
-        setHide(false);
+        setCurrentIndex(0); // Volver al primer elemento cuando se ha mostrado el último
       }
     }
-
-    setShowCharacter(!showCharacter);
   };
 
   const deleteElement = (item) => {
     const updatedList = elementsList.filter((element) => element !== item);
     setElementsList(updatedList);
-
-    setCounters((prevCounters) => {
-      const copyCounters = [...prevCounters];
-      copyCounters.splice(elementsList.indexOf(item), 1);
-      return copyCounters;
-    });
   };
 
   return (
@@ -88,13 +94,12 @@ export default function List({ data }) {
           <ul>
             {elementsList.map((item, index) => (
               <div className="li-counter" key={index}>
-                <li>{item}</li>
+                <li>{currentIndex === index ? item : "???"}</li>
                 <Counter
                   counter={counters[index]}
                   sumauno={() => sumauno(index)}
                   restauno={() => restauno(index)}
                 />
-
                 <button
                   className="delete-button"
                   onClick={() => deleteElement(item)}
@@ -122,12 +127,11 @@ export default function List({ data }) {
       {hide && (
         <div>
           {currentIndex < shuffledArray.length && (
-            <p className="results-characters">
-              {showCharacter ? shuffledArray[currentIndex] : "???"}
-            </p>
+            <p className="results-characters">{shuffledArray[currentIndex]}</p>
           )}
           <button className="next-character-button" onClick={handleClick}>
-            Show next character
+            {reset ? "Restart" : "Show next character"}{" "}
+            {/* Cambiar etiqueta del botón */}
           </button>
         </div>
       )}

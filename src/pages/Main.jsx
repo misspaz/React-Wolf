@@ -7,8 +7,11 @@ export default function Main() {
 
   return (
     <div className="element-list">
-      <p className="title">Hidden Characters<br />
-       Creator</p>
+      <p className="title">
+        Hidden Characters
+        <br />
+        Creator
+      </p>
       <List data={elementsList} />
     </div>
   );

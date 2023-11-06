@@ -30,13 +30,8 @@
 }
 
 .add-character {
-  height: 84px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
-  align-items: flex-start;
 
   input {
     background-color: transparent;
@@ -80,9 +75,9 @@
 }
 
 .dealing-button:hover {
-  background-color: #e1ae5c;
-  border: 1px solid white;
-  color: #241d32;
+  background-color: white;
+  border: 1px solid #241d32;
+  color: #e1ae5c;
   border-radius: 21px;
   margin-top: 36px;
   height: 35px;
@@ -94,8 +89,7 @@
   font-family: "Baswaran";
   color: #e1ae5c;
   font-size: 50px;
-  line-height: 1.2em;
-  margin-top: 50px;
+
 }
 
 .next-character-button {
@@ -104,6 +98,17 @@
   border-radius: 21px;
   margin-top: 10px;
   height: 25px;
-  width: 80px;
+  width: 200px;
+  font-family: "Baswaran";
+}
+
+.next-character-button:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 21px;
+  margin-top: 10px;
+  height: 25px;
+  width: 200px;
   font-family: "Baswaran";
 }
