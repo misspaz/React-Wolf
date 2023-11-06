@@ -1,22 +1,45 @@
-@font-face {
-    font-family: 'Baswaran';
+@media screen and (max-width: 1139px) {
+  @font-face {
+    font-family: "Baswaran";
     src: url(../../assets//fonts//Baswaran.otf);
-   
   }
 
-
-.counter-style {
-  color: white;
-  font-family: 'Baswaran';
-  font-size: 20px;
-
-  button {
-    height: 25px;
-    width: 45px;
-    background-color: white;
-    color: #1D202F;
-    border-radius: 21px;
-    margin: 10px;
+  .counter-style {
+    color: white;
+    font-family: "Baswaran";
     font-size: 20px;
+
+    button {
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      color: #1d202f;
+      border-radius: 21px;
+      margin: 10px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  @font-face {
+    font-family: "Baswaran";
+    src: url(../../assets//fonts//Baswaran.otf);
+  }
+
+  .counter-style {
+    color: white;
+    font-family: "Baswaran";
+    font-size: 20px;
+
+    button {
+      height: 25px;
+      width: 45px;
+      background-color: white;
+      color: #1d202f;
+      border-radius: 21px;
+      margin: 10px;
+      font-size: 20px;
+    }
   }
 }

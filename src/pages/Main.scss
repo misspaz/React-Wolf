@@ -1,3 +1,29 @@
+@media screen and (max-width: 1139px) {
+
+  .element-list{
+      margin-top: 38px;
+      margin-left: 42px;
+  }
+  
+  @font-face {
+      font-family: 'Baswaran';
+      src: url(../assets//fonts//Baswaran.otf);
+     
+    }
+  
+    .title{
+      font-family: 'Baswaran';
+      color: white;
+      font-size: 50px;
+      line-height:1.2em;
+      padding-top: 40px;
+    }
+  }
+
+
+
+@media screen and (min-width: 1140px) {
+
 .element-list{
     margin-top: 100px;
     margin-left: 170px;
@@ -16,3 +42,4 @@
     line-height:1.2em;
     padding-top: 40px;
   }
+}
